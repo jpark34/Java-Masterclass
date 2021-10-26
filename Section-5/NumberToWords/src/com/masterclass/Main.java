@@ -3,17 +3,16 @@ package com.masterclass;
 public class Main {
 
     public static void main(String[] args) {
-        numberToWords(11);
+        numberToWords(123);
     }
 
     public static void numberToWords(int number) {
         if (number < 0) {
             System.out.println("Invalid Value");
         } else {
-            while (number > 0) {
-                int digit = 0;
-                digit = number % 10;
-                switch (digit) {
+            int reverseNumber = reverse(number);
+            for (int i = 0; i < getDigitCount(number); i++) {
+                switch (reverseNumber % 10) {
                     case 0:
                         System.out.println("Zero");
                         break;
@@ -44,13 +43,35 @@ public class Main {
                     case 9:
                         System.out.println("Nine");
                         break;
+                    default:
+                        break;
                 }
-                number /= 10;
+                reverseNumber /= 10;
             }
         }
     }
 
     public static int reverse(int number) {
+        int reverseNum = 0;
+        while (number != 0) {
+            reverseNum = (reverseNum * 10) + number % 10;
+            number /= 10;
+        }
+        return reverseNum;
+    }
 
+    public static int getDigitCount(int number) {
+        if (number < 0) {
+            return -1;
+        }
+        if (number == 0) {
+            return 1;
+        }
+        int digitCount = 0;
+        while (number != 0) {
+            digitCount++;
+            number /= 10;
+        }
+        return digitCount;
     }
 }
