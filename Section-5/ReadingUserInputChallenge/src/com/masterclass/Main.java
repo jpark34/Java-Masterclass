@@ -14,12 +14,17 @@ public class Main {
         while (counter < 10) {
             System.out.println("Please enter a number: ");
             boolean nextInt = scanner.hasNextInt();
-            number = scanner.nextInt();
-            sum += number;
+            if (nextInt) {
+                number = scanner.nextInt();
+                sum += number;
+                counter++;
+            } else {
+                System.out.println("Invalid");
+            }
             scanner.nextLine();
-            counter++;
         }
 
+        scanner.close();
         System.out.println("The sum of the 10 entered numbers is: " + sum);
     }
 }
