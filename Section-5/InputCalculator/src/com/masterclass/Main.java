@@ -13,6 +13,7 @@ public class Main {
         double sum = 0;
         double counter = 0;
 
+        //
         while (true) {
             boolean nextInt = scanner.hasNextInt();
 
