@@ -33,14 +33,14 @@ public class Point {
     }
 
     public double distance() {
-        return Math.sqrt( Math.pow(0 - x, 2) + Math.pow(0 - y, 2) );
+        return Math.sqrt( Math.pow(0 - getX(), 2) + Math.pow(0 - getY(), 2) );
     }
 
     public double distance(int x, int y) {
-        return Math.sqrt( Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2) );
+        return Math.sqrt( Math.pow(x - getX(), 2) + Math.pow(y - getY(), 2) );
     }
 
     public double distance(Point point) {
-        return Math.sqrt( Math.pow(point.getX() - this.x, 2) + Math.pow(point.getX() - this.y, 2) );
+        return Math.sqrt( Math.pow(point.getX() - getX(), 2) + Math.pow(point.getY() - getY(), 2) );
     }
 }
